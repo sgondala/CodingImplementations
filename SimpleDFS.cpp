@@ -4,16 +4,15 @@ using namespace std;
 int t = 0;
 
 void dfsSingle(int current, int graph[][10], pair<int,int> times[],
-		 int parent[], int seenVertices[], int explored[]){
+		 int parent[], int seenVertices[]){
 	times[current].first = t;
 	t++;
-	for(int i=explored[current]+1; i<10; i++){
+	for(int i=0; i<10; i++){
 		if(graph[current][i]==1 && seenVertices[i]==0){
 			cout<<current<<" "<<i<<" "<<"Tree edge"<<endl;
 			seenVertices[i]=1;
 			parent[i] = current;
-			explored[current] = i;
-			dfsSingle(i,graph,times,parent,seenVertices, explored);
+			dfsSingle(i,graph,times,parent,seenVertices);
 		}
 		else if(graph[current][i]==1 && seenVertices[i]==1){
 			cout<<current<<" "<<i<<" "<<"Back edge"<<endl;
@@ -62,11 +61,11 @@ void stackDfs(int current, int graph[][10], pair<int,int> times[],
 }
 
 void dfs(int graph[][10], pair<int,int> times[], 
-			int parent[], int seenVertices[], int explored[]){
+			int parent[], int seenVertices[]){
 	for(int i=0; i<10; i++){
 		if(seenVertices[i]==0){
 			seenVertices[i] = 1;
-			dfsSingle(i,graph,times,parent,seenVertices, explored);			
+			dfsSingle(i,graph,times,parent,seenVertices);			
 		}
 	}
 }
@@ -80,8 +79,6 @@ int main(){
 	memset(parent, -1, sizeof(parent));
 	pair<int,int> times[10];
 	memset(times, -1, sizeof(times));
-	int explored[10];
-	memset(explored, -1, sizeof(explored));
 	graph[1][2] = 1;
 	graph[2][1] = 1;
 	graph[1][3] = 1;
@@ -97,6 +94,6 @@ int main(){
 	graph[5][1] = 1;
 	graph[5][6] = 1;
 	graph[6][5] = 1;
-	dfs(graph, times, parent, seenVertices, explored);
+	dfs(graph, times, parent, seenVertices);
 	cout<<parent[2]<<" "<<parent[3]<<" "<<parent[4]<<" "<<parent[6]<<endl;
 }
