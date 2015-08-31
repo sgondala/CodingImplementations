@@ -25,7 +25,7 @@ int main(){
 		for(int i=0; i<edges[temp].size(); i++){
 			int nodeNew = edges[temp][i].first;
 			int weight = edges[temp][i].second;
-			if(dist[nodeNew] > dist[temp] + weight){
+			if(dist[nodeNew] > dist[temp] + weight){  //Relaxing step
 				dijkstra.erase(dijkstra.find(make_pair(dist[nodeNew],nodeNew)));
 				dist[nodeNew] = dist[temp] + weight;
 				dijkstra.insert(make_pair(dist[nodeNew], nodeNew));
