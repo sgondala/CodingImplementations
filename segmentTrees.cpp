@@ -4,7 +4,7 @@ using namespace std;
 #define N 20
 
 int a[N];
-int segArray[2*N];
+int segArray[10*N];
 
 void buildTree(int node, int start, int end){
 	if(start>end){return;}
