@@ -39,9 +39,9 @@ void seive(){
 
 // Alkwaratz(?) exponentiation
 
-long long power(long long base, int exp){
+long long myPower(long long base, int exp){
 	if(exp==0){return 1;}
-	long long temp = power(base, exp/2);
+	long long temp = myPower(base, exp/2);
 	temp = (temp*temp)%mod;
 	if(exp%2==0){return temp;}
 	else{return (temp*base)%mod;}
