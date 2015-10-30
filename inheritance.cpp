@@ -71,7 +71,7 @@ public:
 
 class gamma2: public alpha, public beta{ //Multiple Inheritance
 public:
-	int getProd(){
+	int getProd(){temp
 		return alphaVal*betaVal;
 	}
 };
