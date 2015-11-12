@@ -75,3 +75,21 @@ long long ncr(long long n, long long r){
 	temp = (temp*ifac[r])%mod;
 	return temp;
 }
+
+template<class T>
+void printVec(T a){
+	for(int i=0; i<a.size(); i++){
+		cout << a[i]<< " ";
+	}
+	cout<<endl;
+}
+
+void print2dVec(T a){
+	for(int i=0; i<a.size(); i++){
+		for(int j=0; j<a[i].size(); i++){
+			cout<<a[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	cout<<endl;
+}

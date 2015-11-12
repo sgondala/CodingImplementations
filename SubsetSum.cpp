@@ -28,5 +28,4 @@ int main(){
 		isPresent[i] = 0;
 	}
 	cout<<"NO"<<endl;
-
 }
