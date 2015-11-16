@@ -73,9 +73,7 @@ int main(){
 	string out = "";
 	int length = returnVal.first;
 	int position = returnVal.second;
-	// if(position%2==1){
-		for(int i = position - length/2 + 1; i<=position + length/2; i+=2)
-			out += s[i];
-	// }
+	for(int i = position - length/2 + 1; i<=position + length/2; i+=2)
+		out += s[i];
 	cout<< out <<endl;
 }
