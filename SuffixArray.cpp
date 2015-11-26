@@ -65,7 +65,6 @@ int main(){
 			suffixArray[all[i].stringIndex][iterations] = currRank;
 
 		}
-
 		iterations++;
 	}
 
